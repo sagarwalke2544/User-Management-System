@@ -1,0 +1,26 @@
+<div class="add-user-btn">
+    <button mat-raised-button color="primary" (click)="addNewUser()">Add User</button>
+</div>
+
+<h4>User Count: {{listData.length}}</h4>
+<table>
+    <thead>
+        <tr>
+            <th style="width: 30%; text-align: left;">Name</th>
+            <th style="width: 30%; text-align: left;">Email</th>
+            <th style="width: 20%;">Phone</th>
+            <th style="width: 20%;">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of listData; let i = index">
+            <td style="text-align: left;width: 30%;">{{data.firstName}}</td>
+            <td style="text-align: left;width: 30%;">{{data.email}}</td>
+            <td style="text-align: center;width: 20%;">{{data.phone}}</td>
+            <td style="text-align: center;width: 20%;">
+                <span style="margin-right: 8px;"><button mat-raised-button color="warn" (click)="delete(i)">Delete</button></span>
+                <span><button mat-raised-button color="secondary" (click)="edit(data)">Edit</button></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
